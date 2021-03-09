@@ -35,19 +35,22 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.zgc = new ZedGraph.ZedGraphControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.inputKp = new System.Windows.Forms.TextBox();
-            this.inputKi = new System.Windows.Forms.TextBox();
-            this.inputKd = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.inputRef = new System.Windows.Forms.NumericUpDown();
-            this.btnInput = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
-            this.serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.btnSetting2 = new System.Windows.Forms.Button();
             this.btnSetting3 = new System.Windows.Forms.Button();
+            this.btnSetting2 = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.inputKd = new System.Windows.Forms.TextBox();
+            this.inputKi = new System.Windows.Forms.TextBox();
+            this.inputKp = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnInput = new System.Windows.Forms.Button();
+            this.inputRef = new System.Windows.Forms.NumericUpDown();
+            this.serialPort = new System.IO.Ports.SerialPort(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputRef)).BeginInit();
@@ -95,6 +98,12 @@
             // 
             // zgc
             // 
+            this.zgc.AutoSize = true;
+            this.zgc.IsShowCursorValues = true;
+            this.zgc.IsShowHScrollBar = true;
+            this.zgc.IsShowPointValues = true;
+            this.zgc.IsSynchronizeXAxes = true;
+            this.zgc.IsSynchronizeYAxes = true;
             this.zgc.Location = new System.Drawing.Point(16, 41);
             this.zgc.Name = "zgc";
             this.zgc.ScrollGrace = 0D;
@@ -104,7 +113,7 @@
             this.zgc.ScrollMinX = 0D;
             this.zgc.ScrollMinY = 0D;
             this.zgc.ScrollMinY2 = 0D;
-            this.zgc.Size = new System.Drawing.Size(563, 397);
+            this.zgc.Size = new System.Drawing.Size(980, 457);
             this.zgc.TabIndex = 4;
             this.zgc.UseExtendedPrintDialog = true;
             // 
@@ -119,32 +128,69 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(585, 41);
+            this.groupBox1.Location = new System.Drawing.Point(1002, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 114);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SETTING";
             // 
-            // label2
+            // btnSetting3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "KP";
+            this.btnSetting3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting3.Location = new System.Drawing.Point(126, 75);
+            this.btnSetting3.Name = "btnSetting3";
+            this.btnSetting3.Size = new System.Drawing.Size(63, 23);
+            this.btnSetting3.TabIndex = 10;
+            this.btnSetting3.Text = "SET";
+            this.btnSetting3.UseVisualStyleBackColor = true;
+            this.btnSetting3.Click += new System.EventHandler(this.btnSetting3_Click);
             // 
-            // label3
+            // btnSetting2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "KI";
+            this.btnSetting2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting2.Location = new System.Drawing.Point(126, 46);
+            this.btnSetting2.Name = "btnSetting2";
+            this.btnSetting2.Size = new System.Drawing.Size(63, 23);
+            this.btnSetting2.TabIndex = 9;
+            this.btnSetting2.Text = "SET";
+            this.btnSetting2.UseVisualStyleBackColor = true;
+            this.btnSetting2.Click += new System.EventHandler(this.btnSetting2_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Location = new System.Drawing.Point(126, 17);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(63, 23);
+            this.btnSetting.TabIndex = 8;
+            this.btnSetting.Text = "SET";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
+            // inputKd
+            // 
+            this.inputKd.Location = new System.Drawing.Point(48, 78);
+            this.inputKd.Name = "inputKd";
+            this.inputKd.Size = new System.Drawing.Size(72, 20);
+            this.inputKd.TabIndex = 7;
+            this.inputKd.Text = "0";
+            // 
+            // inputKi
+            // 
+            this.inputKi.Location = new System.Drawing.Point(48, 49);
+            this.inputKi.Name = "inputKi";
+            this.inputKi.Size = new System.Drawing.Size(72, 20);
+            this.inputKi.TabIndex = 6;
+            this.inputKi.Text = "0";
+            // 
+            // inputKp
+            // 
+            this.inputKp.Location = new System.Drawing.Point(48, 19);
+            this.inputKp.Name = "inputKp";
+            this.inputKp.Size = new System.Drawing.Size(72, 20);
+            this.inputKp.TabIndex = 5;
+            this.inputKp.Text = "0";
             // 
             // label4
             // 
@@ -156,40 +202,47 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "KD";
             // 
-            // inputKp
+            // label3
             // 
-            this.inputKp.Location = new System.Drawing.Point(48, 19);
-            this.inputKp.Name = "inputKp";
-            this.inputKp.Size = new System.Drawing.Size(72, 20);
-            this.inputKp.TabIndex = 5;
-            this.inputKp.Text = "0";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "KI";
             // 
-            // inputKi
+            // label2
             // 
-            this.inputKi.Location = new System.Drawing.Point(48, 49);
-            this.inputKi.Name = "inputKi";
-            this.inputKi.Size = new System.Drawing.Size(72, 20);
-            this.inputKi.TabIndex = 6;
-            this.inputKi.Text = "0";
-            // 
-            // inputKd
-            // 
-            this.inputKd.Location = new System.Drawing.Point(48, 78);
-            this.inputKd.Name = "inputKd";
-            this.inputKd.Size = new System.Drawing.Size(72, 20);
-            this.inputKd.TabIndex = 7;
-            this.inputKd.Text = "0";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "KP";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnInput);
             this.groupBox2.Controls.Add(this.inputRef);
-            this.groupBox2.Location = new System.Drawing.Point(585, 161);
+            this.groupBox2.Location = new System.Drawing.Point(1002, 132);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 54);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INPUT";
+            // 
+            // btnInput
+            // 
+            this.btnInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInput.Location = new System.Drawing.Point(135, 19);
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Size = new System.Drawing.Size(54, 23);
+            this.btnInput.TabIndex = 7;
+            this.btnInput.Text = "SET";
+            this.btnInput.UseVisualStyleBackColor = true;
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // inputRef
             // 
@@ -208,59 +261,45 @@
             this.inputRef.Size = new System.Drawing.Size(120, 20);
             this.inputRef.TabIndex = 0;
             // 
-            // btnInput
-            // 
-            this.btnInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInput.Location = new System.Drawing.Point(135, 19);
-            this.btnInput.Name = "btnInput";
-            this.btnInput.Size = new System.Drawing.Size(54, 23);
-            this.btnInput.TabIndex = 7;
-            this.btnInput.Text = "SET";
-            this.btnInput.UseVisualStyleBackColor = true;
-            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.Location = new System.Drawing.Point(126, 17);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(63, 23);
-            this.btnSetting.TabIndex = 8;
-            this.btnSetting.Text = "SET";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
             // serialPort
             // 
             this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
             // 
-            // btnSetting2
+            // label5
             // 
-            this.btnSetting2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting2.Location = new System.Drawing.Point(126, 46);
-            this.btnSetting2.Name = "btnSetting2";
-            this.btnSetting2.Size = new System.Drawing.Size(63, 23);
-            this.btnSetting2.TabIndex = 9;
-            this.btnSetting2.Text = "SET";
-            this.btnSetting2.UseVisualStyleBackColor = true;
-            this.btnSetting2.Click += new System.EventHandler(this.btnSetting2_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1151, 212);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "label5";
             // 
-            // btnSetting3
+            // label6
             // 
-            this.btnSetting3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting3.Location = new System.Drawing.Point(126, 75);
-            this.btnSetting3.Name = "btnSetting3";
-            this.btnSetting3.Size = new System.Drawing.Size(63, 23);
-            this.btnSetting3.TabIndex = 10;
-            this.btnSetting3.Text = "SET";
-            this.btnSetting3.UseVisualStyleBackColor = true;
-            this.btnSetting3.Click += new System.EventHandler(this.btnSetting3_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1151, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1151, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "label7";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1214, 497);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.zgc);
@@ -301,6 +340,9 @@
         private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Button btnSetting3;
         private System.Windows.Forms.Button btnSetting2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -42,11 +42,22 @@ namespace Motor_Position_Control
             myPane.Title.Text = "PID Setpoint and Response";
             myPane.XAxis.Title.Text = "Time";
             myPane.XAxis.Title.Text = "Angle";
+            //myPane.YAxis.Scale.Min = 0;
+            //myPane.YAxis.Scale.Max = 180;
+            myPane.YAxis.Scale.MajorStepAuto = false;
+            myPane.YAxis.Scale.MajorStep = 1;
+            myPane.YAxis.Scale.MinorStepAuto = false;
+            myPane.YAxis.Scale.MinorStep = 1;
+            myPane.YAxis.MajorGrid.IsVisible = true;
+            myPane.XAxis.Scale.MajorStepAuto = false;
+            myPane.XAxis.Scale.MajorStep = 10;
+            myPane.XAxis.MajorGrid.IsVisible = true;
 
             LineItem refCurve = myPane.AddCurve("Ref", refPoint, Color.Red, SymbolType.None);
             LineItem actCurve = myPane.AddCurve("Act", actPoint, Color.Blue, SymbolType.None);
 
             zgc.GraphPane = myPane;
+            zgc.ClientSize = new Size(900, 450);
             zgc.AxisChange();
         }
 
@@ -66,6 +77,11 @@ namespace Motor_Position_Control
 
             serialPort.PortName = cbPort.Text.Trim();
             serialPort.Open();
+
+
+            serialPort.WriteLine("p0.0");
+            serialPort.WriteLine("p0.0");
+            serialPort.WriteLine("p0.0");
         }
         private void btnInput_Click(object sender, EventArgs e)
         {
@@ -112,12 +128,25 @@ namespace Motor_Position_Control
 
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            String data = serialPort.ReadLine();
+            Console.WriteLine(data);
+            if (data.Contains("KP"))
+            {
+                label5.Text = data;
+            } else if (data.Contains("KI"))
+            {
+                label6.Text = data;
+            } else if (data.Contains("KD"))
+            {
+                label7.Text = data;
+            }
+
             try
             {
-                String[] dataIn = serialPort.ReadLine().Split(',');
-                if (dataIn.Length == 4)
+                String[] dataIn = data.Split(',');
+                if (dataIn.Length == 5)
                 {
-                    if (dataIn[0].Contains("h") && dataIn[3].Contains("l"))
+                    if (dataIn[0].Contains("h") && dataIn[4].Contains("l"))
                     {
                         refPoint.Add(n, double.Parse(dataIn[1]));
                         actPoint.Add(n, double.Parse(dataIn[2]));
