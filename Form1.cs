@@ -154,7 +154,7 @@ namespace Motor_Position_Control
                         zgc.AxisChange();
                         zgc.Invalidate();
 
-                        if(refPoint.Count > 100)
+                        if(refPoint.Count > 1000)
                         {
                             refPoint.RemoveAt(0);
                             actPoint.RemoveAt(0);
